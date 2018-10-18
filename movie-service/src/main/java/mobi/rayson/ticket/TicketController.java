@@ -20,9 +20,9 @@ public class TicketController {
     @Resource
     private TicketService ticketService;
 
-    @PostMapping("/ticket/user/userId/{userId}")
-    public ResponseEntity buyTicket(@PathVariable("userId") Integer userId){
-        Ticket ticket = ticketService.buyTicket(userId);
+    @PostMapping("/ticket/user/{userId}")
+    public ResponseEntity buy(@PathVariable("userId") Integer userId){
+        Ticket ticket = ticketService.buy(userId);
         return ResponseEntity.ok(ticket);
     }
 }
