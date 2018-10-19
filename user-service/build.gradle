@@ -35,6 +35,7 @@ dependencies {
     compile('org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.2')
     compile "com.alibaba:fastjson:1.2.22"
     compile "com.fasterxml.uuid:java-uuid-generator:3.1.3"
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-eureka', version: '1.4.3.RELEASE'
 }
 
 dependencyManagement {

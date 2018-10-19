@@ -6,8 +6,16 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/spring_cloud?useSSL=false
     username: root
     password: 199011081108
+  application:
+    name: user-service
 logging:
   level:
     org.hibernate: info
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+  instance:
+    prefer-ip-address: true
