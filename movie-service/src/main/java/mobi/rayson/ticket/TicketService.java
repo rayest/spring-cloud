@@ -1,7 +1,8 @@
 package mobi.rayson.ticket;
 
-import mobi.rayson.user.User;
 import mobi.rayson.exception.BusinessException;
+import mobi.rayson.feign.UserFeignClient;
+import mobi.rayson.user.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -22,6 +23,9 @@ public class TicketService {
     @Resource
     private RestTemplate restTemplate;
 
+    @Resource
+    private UserFeignClient userFeignClient;
+
     public Ticket buy(Integer userId) {
         ResponseEntity responseEntity = restTemplate.getForEntity("http://localhost:8001/user/" + userId, User.class);
         User user = (User) responseEntity.getBody();
@@ -34,6 +38,17 @@ public class TicketService {
         Ticket ticket = new Ticket();
         ticket.setName("旺角卡门");
         ticket.setUserId(user.getId());
+        return ticket;
+    }
+
+    public Ticket update(Ticket ticket, Integer userId) {
+        User user = userFeignClient.findById(userId);
+        if (user == null) {
+            throw new BusinessException(TicketCodes.USER_IS_NOT_EXIST);
+        }
+        Ticket updatedTicket = new Ticket();
+        updatedTicket.setName(ticket.getName());
+        updatedTicket.setUserId(userId);
         return ticket;
     }
 }

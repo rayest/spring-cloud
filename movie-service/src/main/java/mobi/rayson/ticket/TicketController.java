@@ -1,9 +1,7 @@
 package mobi.rayson.ticket;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -15,14 +13,21 @@ import javax.annotation.Resource;
  *  Description:
  **/
 @RestController
+@RequestMapping("/ticket")
 public class TicketController {
 
     @Resource
     private TicketService ticketService;
 
-    @PostMapping("/ticket/user/{userId}")
+    @PostMapping("/user/{userId}")
     public ResponseEntity buy(@PathVariable("userId") Integer userId){
         Ticket ticket = ticketService.buy(userId);
+        return ResponseEntity.ok(ticket);
+    }
+
+    @PutMapping("/user/{userId}")
+    public ResponseEntity update(@RequestBody Ticket ticket, @PathVariable("userId") Integer userId){
+        ticket = ticketService.update(ticket, userId);
         return ResponseEntity.ok(ticket);
     }
 }

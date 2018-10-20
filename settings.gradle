@@ -1,3 +1,0 @@
-rootProject.name = 'spring-cloud'
-include 'movie-service'
-include 'eureka-server'

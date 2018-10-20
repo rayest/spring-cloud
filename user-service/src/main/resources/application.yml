@@ -10,7 +10,8 @@ spring:
     name: user-service
 logging:
   level:
-    org.hibernate: info
+    org.hibernate: debug
+    mobi.rayson: debug
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml
 eureka:

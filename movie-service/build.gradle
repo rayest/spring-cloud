@@ -17,7 +17,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 group 'mobi.rayson'
-version '1.0-SNT'
+version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
@@ -30,12 +30,13 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
     compile "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
     compile "org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}"
+    compile "org.springframework.cloud:spring-cloud-starter-eureka"
+    compile "org.springframework.cloud:spring-cloud-starter-feign"
     compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.38'
     compile group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
     compile('org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.2')
     compile "com.alibaba:fastjson:1.2.22"
     compile "com.fasterxml.uuid:java-uuid-generator:3.1.3"
-    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-eureka', version: '1.4.3.RELEASE'
 }
 
 dependencyManagement {

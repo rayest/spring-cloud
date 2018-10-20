@@ -11,11 +11,20 @@ import org.springframework.test.util.ReflectionTestUtils;
  **/
 public class BusinessException extends RuntimeException {
 
-    private int code;
+    private String code;
     private String message;
 
     public BusinessException(Object object) {
-        this.code = (int) ReflectionTestUtils.invokeGetterMethod(object, "code");
+        this.code = (String) ReflectionTestUtils.invokeGetterMethod(object, "code");
         this.message = (String) ReflectionTestUtils.invokeGetterMethod(object, "message");
+    }
+
+
+    public String code() {
+        return code;
+    }
+
+    public String message() {
+        return message;
     }
 }
