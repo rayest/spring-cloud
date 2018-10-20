@@ -1,5 +1,6 @@
 package mobi.rayson.ticket;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import mobi.rayson.exception.BusinessException;
 import mobi.rayson.feign.UserFeignClient;
 import mobi.rayson.user.User;
@@ -41,6 +42,7 @@ public class TicketService {
         return ticket;
     }
 
+    @HystrixCommand(fallbackMethod = "updateFallback")
     public Ticket update(Ticket ticket, Integer userId) {
         User user = userFeignClient.findById(userId);
         if (user == null) {
@@ -49,6 +51,13 @@ public class TicketService {
         Ticket updatedTicket = new Ticket();
         updatedTicket.setName(ticket.getName());
         updatedTicket.setUserId(userId);
-        return ticket;
+        return updatedTicket;
+    }
+
+    public Ticket updateFallback(Ticket ticket, Integer userId){
+        Ticket updatedTicket = new Ticket();
+        updatedTicket.setName(ticket.getName());
+        updatedTicket.setUserId(userId);
+        return  updatedTicket;
     }
 }
