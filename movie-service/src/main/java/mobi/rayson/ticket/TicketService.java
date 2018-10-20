@@ -56,8 +56,8 @@ public class TicketService {
 
     public Ticket updateFallback(Ticket ticket, Integer userId){
         Ticket updatedTicket = new Ticket();
-        updatedTicket.setName(ticket.getName());
-        updatedTicket.setUserId(userId);
+        updatedTicket.setName("默认电影");
+        updatedTicket.setUserId(0);
         return  updatedTicket;
     }
 }
