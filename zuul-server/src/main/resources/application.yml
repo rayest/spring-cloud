@@ -8,3 +8,8 @@ eureka:
 spring:
   application:
     name: zuul-gateway-service
+
+zuul:
+  ignored-services: app-service, music-service
+  routes:
+    login-service: /login/**
