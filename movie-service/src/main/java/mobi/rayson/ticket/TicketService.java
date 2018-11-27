@@ -1,8 +1,10 @@
 package mobi.rayson.ticket;
 
+import lombok.extern.slf4j.Slf4j;
 import mobi.rayson.exception.BusinessException;
 import mobi.rayson.feign.UserFeignClient;
 import mobi.rayson.user.User;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -18,6 +20,7 @@ import java.math.BigDecimal;
  *  Description:
  **/
 @Service
+@Slf4j
 public class TicketService {
 
     @Resource
@@ -26,7 +29,11 @@ public class TicketService {
     @Resource
     private UserFeignClient userFeignClient;
 
+    @Value("${from}")
+    private String from;
+
     public Ticket buy(Integer userId) {
+        log.info("From: {}", from);
         ResponseEntity responseEntity = restTemplate.getForEntity("http://localhost:8001/user/" + userId, User.class);
         User user = (User) responseEntity.getBody();
         if (user == null) {
