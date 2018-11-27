@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    config:
+      uri: http://sj.test.brightcns.cn:31001
+      label: master
+      name: brightcns,security-app
+      profile: dev
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/rayest/spring-cloud.git
+          label: master
+          name:
+          profile:
