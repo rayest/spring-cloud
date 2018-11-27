@@ -3,5 +3,5 @@ spring:
     config:
       uri: http://localhost:8200
       label: master
-      name: payment
+      name: movie
       profile: prod
