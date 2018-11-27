@@ -1,7 +1,7 @@
 spring:
   cloud:
     config:
-      uri: http://localhost:8200
+      uri: http://config-server:8200
       label: master
-      name: payment
+      name: movie
       profile: prod
