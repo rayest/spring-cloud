@@ -1,7 +1,0 @@
-spring:
-  cloud:
-    config:
-      uri: http://config-server:8200
-      label: master
-      name: movie
-      profile: prod
