@@ -12,4 +12,10 @@ spring:
 zuul:
   ignored-services: app-service, music-service
   routes:
-    login-service: /login/**
+    api-user:
+      path: /api-user/**
+      serviceId: user-service
+    api-movie:
+      path: /api-movie/**
+      serviceId: movie-service
+
