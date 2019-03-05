@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mobi.rayson.login.CustomerLoginMapper">
+
+  <update id="update" parameterType="java.lang.String">
+    update customer_login set modified_time = now() where phone = #{phone}
+  </update>
+
+</mapper>

@@ -1,0 +1,22 @@
+server:
+  port: 8005
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/rayson?useSSL=false
+    username: root
+    password: 199011081108
+  application:
+    name: login-service
+logging:
+  level:
+    org.hibernate: debug
+    mobi.rayson: debug
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+  instance:
+    prefer-ip-address: true
