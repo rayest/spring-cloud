@@ -1,4 +1,4 @@
-package mobi.rayson.login;
+package mobi.rayson.configuration;
 
 import java.io.Serializable;
 import lombok.AllArgsConstructor;
@@ -9,14 +9,13 @@ import lombok.NoArgsConstructor;
  *  Created with IntelliJ IDEA.
  *  User:  lirui
  *  Date:  2019-03-05
- *  Time: 9:45 AM
+ *  Time: 3:44 PM
  *  Description:
  **/
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class LoginDTO implements Serializable {
-  private String phone;
-  private String verificationCode;
-  private String deviceId;
+public class CustomerPointLog implements Serializable {
+  private int customerId;
+  private int point;
 }

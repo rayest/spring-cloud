@@ -27,11 +27,15 @@ public class LoginService {
   @Resource
   private LoginPublisher loginPublisher;
 
+  @Resource
+  private CustomerPointPublisher customerPointPublisher;
+
   public LoginVO login(LoginDTO loginDTO) throws Exception {
     String phone = loginDTO.getPhone();
     smsClientService.verify(phone, LoginConstant.SMS_LOGIN, loginDTO.getVerificationCode());
     verifyCustomerAndLogin(loginDTO);
     saveLoginLog(loginDTO);
+    customerPointPublisher.handlePoint(loginDTO);
     return new LoginVO();
   }
 
