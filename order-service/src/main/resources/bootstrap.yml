@@ -2,6 +2,6 @@ server:
   port: 8002
 spring:
   application:
-    name: movie-service
+    name: order-service
   profiles:
     active: local

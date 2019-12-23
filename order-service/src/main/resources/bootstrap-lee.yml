@@ -5,7 +5,7 @@ spring:
     username: root
     password: 199011081108
   application:
-    name: movie-service
+    name: order-service
 logging:
   level:
     org.hibernate: info

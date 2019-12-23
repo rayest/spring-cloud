@@ -2,6 +2,6 @@ spring:
   cloud:
     config:
       uri: http://localhost:8200 # config-server 连接
-      name: movie # 服务名
+      name: order # 服务名
       profile: local # active profile
       label: master  # 配置文件的分支

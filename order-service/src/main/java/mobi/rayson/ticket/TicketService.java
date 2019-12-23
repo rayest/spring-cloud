@@ -29,11 +29,7 @@ public class TicketService {
     @Resource
     private UserFeignClient userFeignClient;
 
-    @Value("${from}")
-    private String from;
-
     public Ticket buy(Integer userId) {
-        log.info("From: {}", from);
         ResponseEntity responseEntity = restTemplate.getForEntity("http://localhost:8001/user/" + userId, User.class);
         User user = (User) responseEntity.getBody();
         if (user == null) {
