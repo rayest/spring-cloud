@@ -1,4 +1,4 @@
-package mobi.rayson.point.utils;
+package mobi.rayson.common.utils;
 
 import io.prometheus.client.Gauge;
 import java.util.concurrent.Executors;

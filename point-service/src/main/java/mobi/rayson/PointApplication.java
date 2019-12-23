@@ -1,4 +1,4 @@
-package mobi.rayson.point;
+package mobi.rayson;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

@@ -1,4 +1,4 @@
-package mobi.rayson.point.utils;
+package mobi.rayson.common.utils;
 
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;

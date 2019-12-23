@@ -1,4 +1,4 @@
-package mobi.rayson.point.configuration;
+package mobi.rayson.common.configuration;
 
 import java.io.Serializable;
 import lombok.AllArgsConstructor;

@@ -1,15 +1,15 @@
-package mobi.rayson.point.configuration;
+package mobi.rayson.common.configuration;
 
 import java.io.IOException;
 import javax.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import mobi.rayson.point.utils.JacksonUtils;
+import mobi.rayson.common.utils.JacksonUtils;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
-import static mobi.rayson.point.configuration.RabbitMQConfiguration.QUEUE_POINT;
+import static mobi.rayson.common.configuration.RabbitMQConfiguration.QUEUE_POINT;
 
 /***
  *  Created with IntelliJ IDEA.

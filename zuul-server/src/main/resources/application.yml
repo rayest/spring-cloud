@@ -12,10 +12,16 @@ spring:
 zuul:
   ignored-services: app-service, music-service
   routes:
-    api-user:
-      path: /api-user/**
+    user-api:
+      path: /user-api/**
       serviceId: user-service
-    api-movie:
-      path: /api-movie/**
-      serviceId: movie-service
+    order-api:
+      path: /order-api/**
+      serviceId: order-service
+    point-api:
+      path: /point-api/**
+      serviceId: point-service
+    app-bff-api:
+      path: /app-api/**
+      serviceId: app-bff
 

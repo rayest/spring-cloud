@@ -1,4 +1,4 @@
-package mobi.rayson.point.utils;
+package mobi.rayson.common.utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;

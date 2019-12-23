@@ -1,4 +1,4 @@
-package mobi.rayson.point.configuration;
+package mobi.rayson.common.configuration;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
