@@ -1,5 +1,6 @@
 package mobi.rayson.app.order;
 
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import mobi.rayson.app.client.OrderClient;
 import mobi.rayson.app.client.PointClient;
@@ -17,6 +18,7 @@ public class OrderService {
     @Resource
     private PointClient pointClient;
 
+    @GlobalTransactional
     public void add(String userNo) {
         log.info("新增订单");
         orderClient.add(userNo);
