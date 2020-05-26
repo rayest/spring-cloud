@@ -6,9 +6,12 @@ spring:
     password: 199011081108
   application:
     name: order-service
+  compile "com.alibaba.cloud:spring-cloud-starter-alibaba-seata:2.1.0.RELEASE"
+
 logging:
   level:
     org.hibernate: info
+    mobi.rayson: debug
 mybatis:
   mapper-locations: classpath:mapper/**/*.xml
 eureka:

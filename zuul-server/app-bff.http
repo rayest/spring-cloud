@@ -1,0 +1,9 @@
+POST http://127.0.0.1:8100/app-api/order/2
+Content-Type: application/json
+
+{
+  "id": 999,
+  "value": "content"
+}
+
+###

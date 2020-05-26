@@ -38,6 +38,7 @@ dependencies {
     compile "org.springframework.cloud:spring-cloud-starter-eureka"
     compile('org.springframework.boot:spring-boot-starter-amqp')
     compile group: 'io.prometheus', name: 'simpleclient', version: '0.6.0'
+    compile "com.alibaba.cloud:spring-cloud-starter-alibaba-seata:2.1.0.RELEASE"
 
 }
 

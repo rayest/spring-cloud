@@ -18,7 +18,7 @@ import static mobi.rayson.common.configuration.RabbitMQConfiguration.QUEUE_POINT
  *  Time: 下午2:53
  *  Description:
  **/
-@Component
+//@Component
 @Slf4j
 public class CustomerPointListener {
 

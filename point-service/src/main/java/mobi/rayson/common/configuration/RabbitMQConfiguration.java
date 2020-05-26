@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
  *  Time: 1:34 PM
  *  Description:
  **/
-@Configuration
+//@Configuration
 public class RabbitMQConfiguration {
   public static final String QUEUE_POINT = "point";
   public static final String EXCHANGE = "login_point";

@@ -13,7 +13,7 @@ public class PointController {
     private PointService pointService;
 
     @PutMapping("/point/{userNo}")
-    public void updateByUserNo(@PathVariable("userNo") String userNo){
+    public void updateByUserNo(@PathVariable("userNo") String userNo) throws Exception {
         pointService.updateByUserNo(userNo);
     }
 }
