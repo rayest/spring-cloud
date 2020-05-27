@@ -23,7 +23,7 @@ service-user:
     id: sofa-user
 
 
-##sofa rpc配置
+## sofa rpc 配置。可以通过代码实现配置参考 sofa-common-zookeeper 模块代码
 #com:
 #  alipay:
 #    sofa:
@@ -31,14 +31,18 @@ service-user:
 #        registry-address: zookeeper://127.0.0.1:2181
 
 
+#  springboot 健康检查
 management:
   endpoints:
     web:
       exposure:
-        include: ['httptrace', 'metrics', 'prometheus', 'health']
+        include: '*'
       base-path: /
   server:
     port: 19527
   metrics:
     tags:
       application: ${spring.application.name}
+  endpoint:
+    health:
+      show-details: always

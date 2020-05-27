@@ -6,8 +6,7 @@ com:
   alipay:
     sofa:
       rpc:
-        bolt:
-          port: 22202
+        bolt-port: 22202
       tracer:
         datasource:
           enable: false
@@ -21,6 +20,8 @@ logging:
     com:
       rayest: info
   path: logs
+
+#  springboot 健康检查
 management:
   endpoints:
     web:
@@ -32,6 +33,11 @@ management:
       application: ${spring.application.name}
   server:
     port: 18057
+  endpoint:
+    health:
+      show-details: always
+
+
 server:
   port: 8057
 service:
