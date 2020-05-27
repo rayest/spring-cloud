@@ -1,0 +1,45 @@
+server:
+  port: 9527
+  servlet:
+    context-path: /consumer
+
+spring:
+  application:
+    name: sofa-consumer
+  aop:
+    proxy-target-class: true
+
+  messages:
+    encoding: utf-8
+
+#日志配置
+logging:
+  path: logs
+  level:
+    com:
+      rayest: info
+#指标管理后台服务
+service-provider:
+  unique:
+    id: sofa-provider
+
+
+##sofa rpc配置
+#com:
+#  alipay:
+#    sofa:
+#      rpc:
+#        registry-address: zookeeper://127.0.0.1:2181
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ['httptrace', 'metrics', 'prometheus', 'health']
+      base-path: /
+  server:
+    port: 19527
+  metrics:
+    tags:
+      application: ${spring.application.name}
