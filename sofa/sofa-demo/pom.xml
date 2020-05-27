@@ -24,9 +24,9 @@
     </properties>
 
     <modules>
-        <module>sofa-consumer</module>
-        <module>sofa-provider</module>
-        <module>sofa-facade/sofa-provider-facade</module>
+        <module>sofa-user</module>
+        <module>sofa-app</module>
+        <module>sofa-facade/sofa-user-facade</module>
     </modules>
 
     <dependencies>
@@ -49,7 +49,7 @@
 
             <dependency>
                 <groupId>com.rayest</groupId>
-                <artifactId>sofa-provider-facade</artifactId>
+                <artifactId>sofa-user-facade</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
