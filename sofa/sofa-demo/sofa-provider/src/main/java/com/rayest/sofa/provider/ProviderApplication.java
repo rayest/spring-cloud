@@ -9,9 +9,9 @@ import org.springframework.scheduling.annotation.EnableAsync;
  */
 @SpringBootApplication
 @EnableAsync
-public class ManagerApplication {
+public class ProviderApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ManagerApplication.class, args);
+        SpringApplication.run(ProviderApplication.class, args);
     }
 }

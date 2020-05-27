@@ -2,7 +2,7 @@ package com.rayest.sofa.provider;
 
 import com.alipay.sofa.runtime.api.annotation.SofaService;
 import com.alipay.sofa.runtime.api.annotation.SofaServiceBinding;
-import com.rayest.sofa.provider.facade.IApiService;
+import com.rayest.sofa.provider.facade.IUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +13,11 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 @SofaService(uniqueId = "${service.unique.id}", bindings = {@SofaServiceBinding(bindingType = "bolt")})
-public class IApiServiceImpl implements IApiService {
+public class UserServiceImpl implements IUserService {
 
     @Override
-    public void test(String name) {
+    public String getByUsername(String name) {
         log.info("name: {}", name);
+        return name;
     }
 }
