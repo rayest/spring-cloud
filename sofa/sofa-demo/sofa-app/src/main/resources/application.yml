@@ -18,9 +18,14 @@ logging:
   level:
     com:
       rayest: info
+
 service-user:
   unique:
     id: sofa-user
+
+service-order:
+  unique:
+    id: sofa-order
 
 
 ## sofa rpc 配置。可以通过代码实现配置参考 sofa-common-zookeeper 模块代码

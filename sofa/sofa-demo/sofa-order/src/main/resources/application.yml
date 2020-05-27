@@ -1,0 +1,48 @@
+application:
+  environment:
+    console:
+      showsql: true
+com:
+  alipay:
+    sofa:
+      rpc:
+        bolt-port: 22203
+      tracer:
+        datasource:
+          enable: false
+        zipkin:
+          baseUrl: http://127.0.0.1:9411
+health:
+  alert:
+    for_time: 10
+logging:
+  level:
+    com:
+      rayest: info
+  path: logs
+
+#  springboot 健康检查
+management:
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include: '*'
+  metrics:
+    tags:
+      application: ${spring.application.name}
+  server:
+    port: 18058
+  endpoint:
+    health:
+      show-details: always
+
+
+server:
+  port: 8058
+service:
+  unique:
+    id: ${spring.application.name}
+spring:
+  application:
+    name: sofa-order

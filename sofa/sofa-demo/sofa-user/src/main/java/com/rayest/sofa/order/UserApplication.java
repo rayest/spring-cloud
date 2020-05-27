@@ -1,4 +1,4 @@
-package com.rayest.sofa.user;
+package com.rayest.sofa.order;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

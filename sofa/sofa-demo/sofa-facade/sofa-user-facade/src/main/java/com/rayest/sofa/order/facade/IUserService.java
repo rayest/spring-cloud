@@ -1,4 +1,4 @@
-package com.rayest.sofa.user.facade;
+package com.rayest.sofa.order.facade;
 
 /**
  * @author lirui
